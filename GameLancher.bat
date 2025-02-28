@@ -1,4 +1,7 @@
 @echo off
+
+::Boot Game
+call :BOOT
 setlocal EnableDelayedExpansion
 
 ::Set Config
@@ -22,13 +25,15 @@ for /f "tokens=1" %%A in (%configFile%) do (
 
 ::Download
 echo Checking Regulation Updates...
-curl -o regulation.tmp !url!
+curl -o regulation.tmp !url! --max-time 10 > nul 2>&1
+if not exist regulation.tmp (
+    exit /b
+)
 
 ::Hash of new file
 for /f "skip=1" %%A in ('certutil -hashfile regulation.tmp SHA256') do (
     set newhash=%%A
     goto :exit_2
-
 )
 :exit_2
 
@@ -47,14 +52,6 @@ for /l %%A in (1,1,!count!) do (
 )
 del regulation.tmp
 endlocal
-
-::Boot Game
-if exist rpcs3.exe (
-    start rpcs3.exe
-)
-if exist EMULATOR\rpcs3.exe (
-    start EMULATOR\rpcs3.exe
-)
 exit /b
 
 :SUB
@@ -81,4 +78,18 @@ if not !newhash!==!oldhash! (
 )
 
 endlocal
+exit /b
+
+:BOOT
+@echo off
+tasklist /FI "IMAGENAME eq rpcs3.exe" | find /I "rpcs3.exe" > nul
+if not %ERRORLEVEL% NEQ 0 (
+    exit /b
+)
+if exist rpcs3.exe (
+    cmd /c start rpcs3.exe
+)
+if exist EMULATOR\rpcs3.exe (
+    cmd /c start EMULATOR\rpcs3.exe
+)
 exit /b
