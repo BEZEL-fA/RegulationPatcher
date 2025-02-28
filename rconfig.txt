@@ -1,0 +1,7 @@
+https://drive.usercontent.google.com/download?id={1NfzOGFMGUFn8dd8O946b5gYCegFjtwu4}&confirm=xxx 
+EMULATOR\dev_hdd0\game\BLJM60066\USRDIR\ 
+EMULATOR\dev_hdd0\game\BLJM55005\USRDIR\ 
+EMULATOR\dev_hdd0\game\BLUS30187\USRDIR\ 
+dev_hdd0\game\BLJM60066\USRDIR\ 
+dev_hdd0\game\BLJM55005\USRDIR\ 
+dev_hdd0\game\BLUS30187\USRDIR\ 
