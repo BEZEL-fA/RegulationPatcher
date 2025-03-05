@@ -5,16 +5,16 @@ call :BOOT
 setlocal EnableDelayedExpansion
 
 ::Set Config
-set ConfigFile=rconfig.txt
+set ConfigFile=rconfig2.txt
 if not exist !ConfigFile! (
     echo Config file not found, using default settings
-    echo https://drive.usercontent.google.com/download?id={1NfzOGFMGUFn8dd8O946b5gYCegFjtwu4}^&confirm=xxx > rconfig.txt
-    echo EMULATOR\dev_hdd0\game\BLJM60066\USRDIR\ >> rconfig.txt
-    echo EMULATOR\dev_hdd0\game\BLJM55005\USRDIR\ >> rconfig.txt
-    echo EMULATOR\dev_hdd0\game\BLUS30187\USRDIR\ >> rconfig.txt
-    echo dev_hdd0\game\BLJM60066\USRDIR\ >> rconfig.txt
-    echo dev_hdd0\game\BLJM55005\USRDIR\ >> rconfig.txt
-    echo dev_hdd0\game\BLUS30187\USRDIR\ >> rconfig.txt
+    echo https://drive.usercontent.google.com/download?id={19xfxkUpQZqyaIAtWydbP7fUysdxcMc5i}^&confirm=xxx > rconfig2.txt
+    echo EMULATOR\dev_hdd0\game\BLJM60066\USRDIR\ >> rconfig2.txt
+    echo EMULATOR\dev_hdd0\game\BLJM55005\USRDIR\ >> rconfig2.txt
+    echo EMULATOR\dev_hdd0\game\BLUS30187\USRDIR\ >> rconfig2.txt
+    echo dev_hdd0\game\BLJM60066\USRDIR\ >> rconfig2.txt
+    echo dev_hdd0\game\BLJM55005\USRDIR\ >> rconfig2.txt
+    echo dev_hdd0\game\BLUS30187\USRDIR\ >> rconfig2.txt
 )
 
 for /f "tokens=1" %%A in (%configFile%) do (
